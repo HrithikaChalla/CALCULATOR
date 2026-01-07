@@ -2,31 +2,35 @@
 <html>
 <head>
     <title>Interactive Calculator</title>
+    <style>
+        .calculator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Javascript Calculator </h2>
+<h2>Javascript Calculator</h2>
 
-<input type="number" id="num1" placeholder="Enter first number">
-<br><br>
+<div class="calculator">
+    <input type="number" id="num1" placeholder="Number 1">
 
-<input type="number" id="num2" placeholder="Enter second number">
-<br><br>
+    <select id="operation">
+        <option value="">Op</option>
+        <option value="add">+</option>
+        <option value="sub">−</option>
+        <option value="mul">×</option>
+        <option value="div">÷</option>
+    </select>
 
-<select id="operation">
-    <option value="add">+</option>
-    <option value="sub">-</option>
-    <option value="mul">*</option>
-    <option value="div">/</option>
-</select>
+    <input type="number" id="num2" placeholder="Number 2">
 
-<br><br>
+    <button type="button" onclick="calculate()">Calculate</button>
 
-<button type="button" onclick="calculate()">Calculate</button>
-
-<br><br>
-
-<p id="result">Result will be shown here</p>
+    <span id="result"></span>
+</div>
 
 <script>
     function calculate() {
@@ -43,19 +47,18 @@
             result = a * b;
         } else if (op == "div") {
             if (b == 0) {
-                document.getElementById("result").innerHTML = "Cannot divide by zero";
+                document.getElementById("result").innerHTML = "Error";
                 return;
             }
             result = a / b;
         } else {
-            document.getElementById("result").innerHTML = "Please select an operation";
+            document.getElementById("result").innerHTML = "Select op";
             return;
         }
 
-        document.getElementById("result").innerHTML = "Result: " + result;
+        document.getElementById("result").innerHTML = "= " + result;
     }
 </script>
 
 </body>
 </html>
-
