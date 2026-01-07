@@ -3,10 +3,10 @@
 <head>
     <title>Interactive Calculator</title>
     <style>
-        calculator {
+        .calculator {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 10px; 
         }
     </style>
 </head>
@@ -18,14 +18,13 @@
     <input type="number" id="num1" placeholder="Enter a number">
 
     <select id="operation">
-        <option value="">Op</option>
-        <option value="add">+</option>
+        <option value="add" selected>+</option>
         <option value="sub">−</option>
         <option value="mul">×</option>
         <option value="div">÷</option>
     </select>
 
-    <input type="number" id="num2" placeholder="Enter a number">
+    <input type="number" id="num2" placeholder="Enter a number ">
 
     <button type="button" onclick="calculate()">Calculate</button>
 
@@ -51,9 +50,6 @@
                 return;
             }
             result = a / b;
-        } else {
-            document.getElementById("result").innerHTML = "Select op";
-            return;
         }
 
         document.getElementById("result").innerHTML = "= " + result;
